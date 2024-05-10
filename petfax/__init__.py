@@ -1,5 +1,6 @@
 from flask import Flask
 from . import pet
+from . import fact
 
 def create_app():
     app = Flask(__name__)
@@ -12,5 +13,7 @@ def create_app():
     #register Blueprints
     app.register_blueprint(pet.bp)  
 
+    # register fact blueprint 
+    app.register_blueprint(fact.bp)
     
     return app
