@@ -9,14 +9,15 @@ def index():
         submitter = request.form['submitter']
         fact = request.form['fact']
 
+      # add new fact to database
         new_fact = models.Fact(submitter=submitter, fact=fact) 
         models.db.session.add(new_fact)
         models.db.session.commit()
-
+    # redirect to facts page
         return redirect('/facts/')
-
+    # get facts from database
     results = models.Fact.query.all()
-    
+
     return render_template('facts/index.html', facts=results)
 
 @bp.route('/new')
