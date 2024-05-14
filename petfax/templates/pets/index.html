@@ -15,7 +15,7 @@
                 {% for pet in pets %}
                 <div class="pet">
                     <h2>{{ pet.name}}</h2>
-                    <img src="{{ pet.pet_photo }}" alt="{{ pet.name }}">
+                    <img class="pet-photo" src="{{ pet.pet_photo }}" alt="{{ pet.name }}">
                     <a href="/pets/{{ pet.pet_id }}">Learn more</a>
                 </div>
                 {% endfor %}
